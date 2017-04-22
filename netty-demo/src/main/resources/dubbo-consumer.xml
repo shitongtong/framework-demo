@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://code.alibabatech.com/schema/dubbo
+    http://code.alibabatech.com/schema/dubbo/dubbo.xsd ">
+
+    <dubbo:application name="onlyhi-client-rest"/>
+
+    <dubbo:registry address="zookeeper://192.168.1.252:2181"/>
+
+    <dubbo:reference id="appInfoService" interface="cn.onlyhi.client.service.AppInfoService" timeout="10000" check="false" />
+    <dubbo:reference id="clientSysLogService" interface="cn.onlyhi.client.service.ClientSysLogService" timeout="10000" check="false" />
+    <dubbo:reference id="courseRoomService" interface="cn.onlyhi.client.service.CourseRoomService" timeout="10000" check="false" />
+    <dubbo:reference id="courseService" interface="cn.onlyhi.client.service.CourseService" timeout="10000" check="false" />
+    <dubbo:reference id="coursewareService" interface="cn.onlyhi.client.service.CoursewareService" timeout="10000" check="false" />
+    <dubbo:reference id="leadsLogService" interface="cn.onlyhi.client.service.LeadsLogService" timeout="10000" check="false" />
+    <dubbo:reference id="leadsService" interface="cn.onlyhi.client.service.LeadsService" timeout="10000" check="false" />
+    <dubbo:reference id="redisService" interface="cn.onlyhi.client.service.RedisService" timeout="10000" check="false" />
+    <dubbo:reference id="studentService" interface="cn.onlyhi.client.service.StudentService" timeout="10000" check="false" />
+    <dubbo:reference id="teacherService" interface="cn.onlyhi.client.service.TeacherService" timeout="10000" check="false" />
+    <dubbo:reference id="userFeedbackService" interface="cn.onlyhi.client.service.UserFeedbackService" timeout="10000" check="false" />
+
+</beans>

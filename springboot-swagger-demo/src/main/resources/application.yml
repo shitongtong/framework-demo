@@ -1,0 +1,86 @@
+#应用程序端口配置
+server: 
+  port: 8080
+#  tomcat:
+#    access-log-enabled: true
+
+#文件上传大小配置
+multipart:
+  maxFileSize: 100Mb
+  maxRequestSize: 100Mb
+
+#日志配置    
+logging: 
+#    file: 
+#    path: 
+    config: classpath:logback.xml
+#    level: 
+#        org.springframework.web: ERROR
+#        org.springframework.beans: ERROR
+
+
+
+spring:
+  profiles:
+    active: ${spring.profiles.active}
+    #active: dev
+
+---
+# 开发环境配置
+spring:
+  profiles: dev
+dubbo:
+  registry:
+    address: zookeeper://192.168.1.219:2181
+
+#自定义配置
+my:
+  uploadAddress:  http://192.168.1.252:8090/
+  serverIp:  192.168.1.252
+
+#环信应用配置
+chatConfig:
+  serverHost: a1.easemob.com
+  appKey: 1157170704115696#hiketangdev
+  clientId: YXA69PgbQGK2Eees0pko-RDMOQ
+  clientSecret: YXA6Pg0h24A4OkF1CEVTSRfU2FyROPM
+
+---
+# 测试环境配置
+spring:
+  profiles: test
+dubbo:
+  registry:
+    address: zookeeper://106.14.46.51:2181
+
+#自定义配置
+my:
+  uploadAddress:  http://api.onlyeduhi.com/
+  serverIp:  106.14.46.51
+
+#环信应用配置
+chatConfig:
+  serverHost: a1.easemob.com
+  appKey: 1157170704115696#hiketangtest
+  clientId: YXA6DJ5WEGK3Eeeo68V7Ot7OgA
+  clientSecret: YXA6f5CP1NpdqU7LRWQnsw_JQSSkrCc
+
+---
+# 正式环境配置
+spring:
+  profiles: prd
+dubbo:
+  registry:
+    address: zookeeper://10.172.204.193:2181?backup=10.172.204.197:2181,10.24.240.145:2181
+
+#自定义配置
+my:
+  uploadAddress:  http://admin.onlyhi.cn/
+  serverIp:  139.196.19.72
+
+#环信应用配置
+chatConfig:
+  serverHost: a1.easemob.com
+  appKey: 1159170704115215#sttdemo
+  clientId: YXA6FM5IwGBrEeep3ZtA8WullQ
+  clientSecret: YXA6di0hbqYncGM1sl5rgxVy10VZdvo

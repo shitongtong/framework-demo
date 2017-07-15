@@ -1,5 +1,6 @@
 package cn.stt.po;
 
+
 import org.springframework.data.elasticsearch.annotations.Document;
 
 import java.io.Serializable;

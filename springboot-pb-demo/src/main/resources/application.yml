@@ -1,0 +1,30 @@
+server:
+  servlet:
+    context-path: /pb-api
+  port: 30001
+  tomcat:
+    max-swallow-size: -1
+
+#日志配置
+logging:
+  config: classpath:logback.xml
+  level:
+    cn.stt.pb.mapper: debug
+
+spring:
+  application:
+    name: pb-api
+  jackson:
+    serialization:
+      write-dates-as-timestamps: true
+  profiles:
+    active: dev
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 200MB
+
+---
+# 开发环境配置
+spring:
+  profiles: dev

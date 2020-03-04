@@ -11,7 +11,7 @@
     <properties>
         <skip_maven_deploy>false</skip_maven_deploy>
         <spring.version>4.3.7.RELEASE</spring.version>
-        <jackson.version>2.8.2</jackson.version>
+        <jackson.version>2.10.3</jackson.version>
     </properties>
 
     <dependencies>

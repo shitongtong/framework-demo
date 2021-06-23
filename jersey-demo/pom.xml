@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <jetty.version>9.0.6.v20130930</jetty.version>
+        <jetty.version>9.4.41.v20210516</jetty.version>
         <jersey.version>2.8</jersey.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
